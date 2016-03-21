@@ -10,5 +10,36 @@
   <%= @user.created_at %>
 </p>
 
+<h2> Classes </h2>
+<table style="margin: 30px;" border="1">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Subjects</th>
+      <th>Description</th>
+      <th>Credits</th>
+      <th>Independent Study</th>
+      <th>Req</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @enrolls.each do |enroll| %>
+      <tr>
+        <td><%= enroll.id %></td>
+        <td><%= enroll.name %></td>
+        <td><%= enroll.code %></td>
+        <td><%= enroll.subjects %></td>
+        <td><%= enroll.description %></td>
+        <td><%= enroll.credits %></td>
+        <td><%= enroll.independent_study %></td>
+        <td><%= enroll.requirements %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

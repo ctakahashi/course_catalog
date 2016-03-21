@@ -1,0 +1,14 @@
+$(document).ready(function (){
+  $('#submit_button').click(function(){
+    $.ajax({
+      url: 'enrollment/make',
+      type: 'POST'
+      success: function (){
+        alert('success');
+      },
+      error: function (){
+        alert('error');
+      }
+    });
+  });
+}

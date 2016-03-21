@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @course_ids = Enrollment.where(user_id: session[:user_id]).map { |enroll| enroll.course_id }
+    @enrolls = Course.where(id: @course_ids)
   end
 
   # GET /users/new

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :searches
+  resources :enrollments
   get 'admin' => 'admin#index'
   controller :sessions do
     get 'login' => :new
@@ -9,6 +11,7 @@ Rails.application.routes.draw do
   get "sessions/create"
   get "sessions/destroy"
   get 'admin/index'
+  post "enrollment/make"
 
   resources :users
   resources :courses
